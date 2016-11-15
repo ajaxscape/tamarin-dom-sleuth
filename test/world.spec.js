@@ -12,12 +12,15 @@ const dummyDriver = {}
 
 describe('world class', function () {
   const el = {
-    getAttribute: () => `<ul>
-                               <li>a</li>
-                               <li>b</li>
-                               <li>c</li>
-                               <li>d</li>
-                             </ul>`
+    getAttribute: () => `
+    <root>
+      <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+      </ul>
+    </root>`
   }
   class World {
     findElement () {
@@ -39,8 +42,10 @@ describe('world class', function () {
   it('Make sure select returns a read-only element that can be queried', function () {
     const world = new ExtendedWorld(dummyDriver)
     return Promise.all([
-      world.select({}, '.ul').should.eventually.have.lengthOf(6),
-      world.select({}, '.li').should.eventually.have.lengthOf(6)
+      world.select({}, 'ul').should.eventually.have.lengthOf(1),
+      world.select({}, 'li').should.eventually.have.lengthOf(4),
+      world.select({}, 'li:first-of-type')
+        .then((el) => Promise.resolve(el.text().should.equal('a')))
     ])
   })
 })
