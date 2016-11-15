@@ -1,6 +1,6 @@
 {
   "name": "tamarin-dom-sleuth",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Extends tamarin to provide a simple read only query of the dom.",
   "main": "index.js",
   "scripts": {
