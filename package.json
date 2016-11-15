@@ -4,7 +4,8 @@
   "description": "Extends tamarin to provide a simple read only query of the dom.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node node_modules/mocha/bin/mocha",
+    "coverage": "node node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- --ui bdd -R spec -t 5000"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,12 @@
   },
   "homepage": "https://github.com/ajaxscape/tamarin-dom-sleuth#readme",
   "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "coveralls": "^2.11.14",
+    "istanbul": "^0.4.3",
+    "mocha": "^3.1.2",
+    "mocha-lcov-reporter": "^1.2.0",
     "standard": "^8.5.0"
   },
   "dependencies": {
