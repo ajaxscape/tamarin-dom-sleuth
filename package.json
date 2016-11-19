@@ -1,6 +1,6 @@
 {
   "name": "tamarin-dom-sleuth",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Extends tamarin to provide a simple read only query of the dom.",
   "main": "index.js",
   "scripts": {
@@ -39,6 +39,6 @@
     "cheerio": "^0.22.0"
   },
   "peerDependencies": {
-    "tamarin": "^1.0.17"
+    "tamarin": "^1.0.20"
   }
 }
