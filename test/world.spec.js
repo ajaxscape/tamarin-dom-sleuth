@@ -23,7 +23,7 @@ describe('world class', function () {
     </root>`
   }
   class World {
-    findElement () {
+    waitFor () {
       return Promise.resolve(el)
     }
   }
